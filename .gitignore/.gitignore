@@ -1,0 +1,132 @@
+//Sortare descrescatoare.
+ 
+#include<iostream>
+#include<limits.h>
+ 
+using namespace std;
+int V[100];
+int n;
+int main()
+{
+cout<<"n=";cin>>n;
+for(int i=1;i<=n;i++)
+    {   cout<<"V["<<i<<"]=";
+        cin>>V[i];
+    }
+for(int i=1;i<=n-1;i++)
+    {
+        int minim=INT_MIN;
+        int locul=0;
+        for(int j=i;j<=n;j++)
+        {
+           if (minim<V[j]) {
+                                   minim=V[j];
+                                   locul=j;
+                                  }
+        }
+        swap(V[i],V[locul]);
+    }
+cout<<endl<<"Sortate "<<endl;
+for(int i=1;i<=n;i++)
+    cout<<V[i]<<" ";
+}
+ 
+//Locatie de index 0.
+ 
+#include<iostream>
+#include<limits.h>
+ 
+using namespace std;
+int V[100];
+int n;
+int main()
+{
+cout<<"n=";cin>>n;
+for(int i=0;i<=n-1;i++)
+    {   cout<<"V["<<i<<"]=";
+        cin>>V[i];
+    }
+for(int i=0;i<=n-1;i++)
+    {
+        int minim=INT_MAX;
+        int locul=0;
+        for(int j=i;j<=n-1;j++)
+        {
+           if (minim>V[j]) {
+                                   minim=V[j];
+                                   locul=j;
+                                  }
+        }
+        swap(V[i],V[locul]);
+    }
+cout<<endl<<"Sortate "<<endl;
+for(int i=0;i<=n-1;i++)
+    cout<<V[i]<<" ";
+}
+ 
+//Initializarea minimului cu primul.
+ 
+#include<iostream>
+#include<limits.h>
+ 
+using namespace std;
+int V[100];
+int n;
+int main()
+{
+cout<<"n=";cin>>n;
+for(int i=1;i<=n;i++)
+    {   cout<<"V["<<i<<"]=";
+        cin>>V[i];
+    }
+for(int i=1;i<=n-1;i++)
+    {
+        int primul=INT_MAX;
+        int locul=0;
+        for(int j=i;j<=n;j++)
+        {
+           if (V[j]<primul) {
+                                   primul=V[j];
+                                   locul=j;
+                                  }
+        }
+        swap(V[i],V[locul]);
+    }
+cout<<endl<<"Sortate "<<endl;
+for(int i=1;i<=n;i++)
+    cout<<V[i]<<" ";
+}
+
+//Parcurgerea NS de la coada spre inceput.
+
+#include<iostream>
+#include<limits.h>
+
+using namespace std;
+int V[100];
+int n;
+int main()
+{
+cout<<"n=";cin>>n;
+for(int i=1;i>0;i--)
+    {   cout<<"V["<<i<<"]=";
+        cin>>V[i];
+    }
+for(int i=1;i>0;i--)
+    {
+        int minim=INT_MAX;
+        int locul=0;
+        for(int j=i;j>0;j--)
+        {
+           if (V[j]=minim) {
+                                   minim=V[j];
+                                   locul=j;
+                                  }
+        }
+        swap(V[i],V[locul]);
+    }
+cout<<endl<<"Sortate "<<endl;
+for(int i=1;i>0;i--)
+    cout<<V[i]<<" ";
+    return 1;
+}
